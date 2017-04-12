@@ -1,5 +1,8 @@
 set shell=/bin/bash
 
+" Set utf8 as standard encoding and en_US as the standard language
+set encoding=utf8
+
 set ttyfast
 set lazyredraw
 
@@ -15,7 +18,8 @@ if has("autocmd")
 endif
 
 syntax on
-colors elflord
+colorscheme desert
+" colors elflord
 
 set nocompatible
 set nobackup
@@ -31,6 +35,8 @@ set noswapfile
 set incsearch " do incremental searching
 set showcmd " display incomplete commands
 set autowrite " Automatically :write before commands
+set cursorline
+set autoread
 
 set textwidth=80
 set colorcolumn=+1
