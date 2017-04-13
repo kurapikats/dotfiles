@@ -28,7 +28,7 @@ set rnu " Set relative line numbering
 set autoindent
 set backspace=indent,eol,start
 set ruler
-set nohlsearch
+set hlsearch
 set laststatus=2
 set ignorecase smartcase
 set noswapfile
@@ -132,3 +132,8 @@ set splitright
 
 " Quicker window movement. Seemlessly navigate between Vim/Tmux panes
 let g:tmux_navigator_no_mappings = 1
+
+" Integrate to system clipboard (OSX)
+" https://coderwall.com/p/g-d8rg/tmux-1-8-vim-macvim-easy-osx-clipboard-integration
+set clipboard=unnamed
+
