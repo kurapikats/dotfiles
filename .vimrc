@@ -9,7 +9,7 @@ set lazyredraw
 if has("autocmd")
   au VimEnter,InsertLeave * silent execute '!echo -ne "\e[2 q"' | redraw!
   au InsertEnter,InsertChange *
-    \ if v:insertmode == 'i' | 
+    \ if v:insertmode == 'i' |
     \   silent execute '!echo -ne "\e[6 q"' | redraw! |
     \ elseif v:insertmode == 'r' |
     \   silent execute '!echo -ne "\e[4 q"' | redraw! |
@@ -35,7 +35,7 @@ set noswapfile
 set incsearch " do incremental searching
 set showcmd " display incomplete commands
 set autowrite " Automatically :write before commands
-set cursorline
+" :set cursorline
 set autoread
 
 set textwidth=80
@@ -47,7 +47,7 @@ set complete+=kspell
 set number
 set numberwidth=5
 
-" Softtabs, 2 spaces 
+" Softtabs, 2 spaces
 set expandtab
 set shiftwidth=2
 set softtabstop=2
@@ -57,7 +57,7 @@ set tabstop=2
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
 
-" inoremap jj <ESC> 
+" inoremap jj <ESC>
 execute pathogen#infect()
 filetype plugin indent on
 
@@ -136,4 +136,21 @@ let g:tmux_navigator_no_mappings = 1
 " Integrate to system clipboard (OSX)
 " https://coderwall.com/p/g-d8rg/tmux-1-8-vim-macvim-easy-osx-clipboard-integration
 set clipboard=unnamed
+
+" Console log from insert mode; Puts focus inside parentheses
+imap cll console.log();<Esc>==f(a
+" " Console log from visual mode on next line, puts visual selection inside
+" parentheses
+vmap cll yocll<Esc>p
+" " Console log from normal mode, inserted on next line with word your on inside
+" parentheses
+nmap cll yiwocll<Esc>p
+
+" Remove trailing whitespace on save
+autocmd BufWritePre * %s/\s\+$//e
+
+" Map ctrl+s to save
+nnoremap <c-s> :w<CR>
+inoremap <c-s> <Esc>:w<CR>l
+vnoremap <c-s> <Esc>:w<CR>
 
