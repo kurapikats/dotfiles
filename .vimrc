@@ -18,8 +18,8 @@ if has("autocmd")
 endif
 
 syntax on
-colorscheme desert
-" colors elflord
+" colorscheme desert
+colors elflord
 
 set nocompatible
 set nobackup
@@ -154,3 +154,5 @@ nnoremap <c-s> :w<CR>
 inoremap <c-s> <Esc>:w<CR>l
 vnoremap <c-s> <Esc>:w<CR>
 
+" map jj to Esc key 
+imap jj <Esc>
